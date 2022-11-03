@@ -128,7 +128,7 @@ namespace _2021__Testing_System
             //Her data geldiğinde program buraya geliyor
             string gelenveri = serialPort2.ReadExisting();
             richTextBox1.Invoke(new veriGoster(textBoxYaz), gelenveri);
-            
+            //Hello guyss
 
         }
     }
