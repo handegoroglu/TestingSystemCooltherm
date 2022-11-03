@@ -88,8 +88,8 @@ namespace _2021__Testing_System
             }
             else
             {
-                label3.Text = "Bağlantı kesildi!";
-                label3.ForeColor = Color.Red;
+                //label3.Text = "Bağlantı kesildi!";
+                //label3.ForeColor = Color.Red;
                 serialPort1.Close();
                 serialPort2.Close();
             }
