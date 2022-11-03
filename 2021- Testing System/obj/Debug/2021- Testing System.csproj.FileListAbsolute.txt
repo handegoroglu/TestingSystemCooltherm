@@ -9,3 +9,14 @@ C:\Projects\2021- Testing System\2021- Testing System\2021- Testing System\obj\D
 C:\Projects\2021- Testing System\2021- Testing System\2021- Testing System\obj\Debug\2021- Testing System.csproj.CoreCompileInputs.cache
 C:\Projects\2021- Testing System\2021- Testing System\2021- Testing System\obj\Debug\2021- Testing System.exe
 C:\Projects\2021- Testing System\2021- Testing System\2021- Testing System\obj\Debug\2021- Testing System.pdb
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\2021- Testing System.exe.config
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\2021- Testing System.exe
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\2021- Testing System.pdb
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.csproj.AssemblyReference.cache
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.csproj.SuggestedBindingRedirects.cache
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\_2021__Testing_System.Form1.resources
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\_2021__Testing_System.Properties.Resources.resources
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.csproj.GenerateResource.cache
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.csproj.CoreCompileInputs.cache
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.exe
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.pdb
