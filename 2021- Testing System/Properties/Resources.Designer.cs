@@ -83,6 +83,56 @@ namespace _2021__Testing_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MacBook_Pro_13_inch___Copy_photoaidcom_cropped {
+            get {
+                object obj = ResourceManager.GetObject("MacBook Pro 13-inch - Copy-photoaidcom-cropped", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MacBook_Pro_13_inch___Copy_photoaidcom_cropped1 {
+            get {
+                object obj = ResourceManager.GetObject("MacBook Pro 13-inch - Copy-photoaidcom-cropped1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MacBook_Pro_13_inch___Copy_photoaidcom_cropped2 {
+            get {
+                object obj = ResourceManager.GetObject("MacBook Pro 13-inch - Copy-photoaidcom-cropped2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MacBook_Pro_13_inch___Copy_photoaidcom_cropped3 {
+            get {
+                object obj = ResourceManager.GetObject("MacBook Pro 13-inch - Copy-photoaidcom-cropped3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MacBook_Pro_13_inch___Copy_photoaidcom_cropped4 {
+            get {
+                object obj = ResourceManager.GetObject("MacBook Pro 13-inch - Copy-photoaidcom-cropped4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MacBook_Pro_13_inch1 {
             get {
                 object obj = ResourceManager.GetObject("MacBook Pro 13-inch1", resourceCulture);
@@ -96,6 +146,26 @@ namespace _2021__Testing_System.Properties {
         internal static System.Drawing.Bitmap manufacture {
             get {
                 object obj = ResourceManager.GetObject("manufacture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manufacture1 {
+            get {
+                object obj = ResourceManager.GetObject("manufacture1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
