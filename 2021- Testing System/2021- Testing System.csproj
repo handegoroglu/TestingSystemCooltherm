@@ -95,5 +95,8 @@
   <ItemGroup>
     <None Include="bin\Debug\MacBook Pro 13-inch - Copy-photoaidcom-cropped.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gears.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

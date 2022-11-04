@@ -37,31 +37,32 @@ namespace _2021__Testing_System
 
 
             label3.Text = "Bağlantı Kapalı";   //Bu esnada bağlantı yok.
+            label3.ForeColor= Color.Red;
+            button2.Enabled = false;
 
 
 
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-
-            
-
-        }
 
 
         bool portOpen(bool state)
+
         {
             if (state)
             {
+
                 serialPort1.PortName = comboBox1.Text;  // combobox1'e zaten port isimlerini aktarmıştık.
                 serialPort1.BaudRate = Convert.ToInt16(comboBox2.Text); //Seri Haberleşme baudrate'i combobox2 'de seçilene göre belirliyoruz.
 
                 serialPort2.PortName = comboBox3.Text;  // combobox1'e zaten port isimlerini aktarmıştık.
                 serialPort2.BaudRate = Convert.ToInt16(comboBox4.Text); //Seri Haberleşme baudrate'i combobox2 'de seçilene göre belirliyoruz.
+
+
                 try
                 {
                     serialPort1.Open(); //Haberleşme için port açılıyor
+
                 }
                 catch (Exception)
                 {
@@ -77,7 +78,7 @@ namespace _2021__Testing_System
 
                 if (serialPort1.IsOpen && serialPort2.IsOpen)
                 {
-                    label3.ForeColor = Color.Green;
+                    label3.ForeColor = Color.GreenYellow;
                     label3.Text = "Bağlantı Açık";
                 }
                 else
@@ -88,13 +89,13 @@ namespace _2021__Testing_System
             }
             else
             {
-                //label3.Text = "Bağlantı kesildi!";
-                //label3.ForeColor = Color.Red;
+                
                 serialPort1.Close();
                 serialPort2.Close();
             }
 
             return true;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -130,17 +131,20 @@ namespace _2021__Testing_System
 
                     if (receiveData.Equals(okeymessage.Replace("\n", "")) == true)
                     {
-                        MessageBox.Show("Çalıştı");
+                        label4.ForeColor = Color.GreenYellow;
+                        label4.Text = ("Test Başarılı!");
                     }
                     else
                     {
-                        MessageBox.Show($"{serialPort2.PortName}'den {serialPort1.PortName}'e data gönderilemedi.");
+                        label4.ForeColor = Color.Red;
+                        label4.Text = ($"{serialPort2.PortName}'den {serialPort1.PortName}'e data gönderilemedi.");
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show($"{serialPort1.PortName}'den {serialPort2.PortName}'e data gönderilemedi.");
+                    label4.ForeColor = Color.Red;
+                    label4.Text = ($"{serialPort1.PortName}'den {serialPort2.PortName}'e data gönderilemedi.");
                 }
 
             }
@@ -148,15 +152,19 @@ namespace _2021__Testing_System
             {
                 if (!serialPort2.IsOpen && !serialPort1.IsOpen)
                 {
-                    MessageBox.Show($"{serialPort1.PortName} ve {serialPort2.PortName} açılamadı");
+                    label4.ForeColor = Color.Red;
+                    label4.Text = ($"{serialPort1.PortName} ve {serialPort2.PortName} açılamadı");
                 }
                 else if (!serialPort1.IsOpen)
                 {
-                    MessageBox.Show($"{serialPort1.PortName} açılamadı");
+                    label4.ForeColor = Color.Red;
+                    label4.Text = ($"{serialPort1.PortName} açılamadı");
                 }
                 else if (!serialPort2.IsOpen)
                 {
-                    MessageBox.Show($"{serialPort2.PortName} açılamadı");
+                    label4.ForeColor = Color.Red;
+                    label4.Text= ($"{serialPort2.PortName} açılamadı");
+                   // MessageBox.Show($"{serialPort2.PortName} açılamadı");
                 }
 
             }
@@ -167,6 +175,10 @@ namespace _2021__Testing_System
 
         private void comboBox3_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedItem != " " && comboBox2.SelectedItem != " ")
+            {
+                button2.Enabled = true;
+            }
             comboBox3.Items.Clear();
 
             //Port Numaralarını ports isimli diziye atıyoruz.
