@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
 using System.IO.Ports;
+using System.Data.SqlClient;
 
 namespace _2021__Testing_System
 {
@@ -23,6 +24,32 @@ namespace _2021__Testing_System
             serialPort1.ReadTimeout = 100;//veri okuma timeout'u 100ms
             serialPort2.ReadTimeout = 100;//veri okuma timeout'u 100ms
         }
+        SqlConnection baglan = new SqlConnection("Data Source=LAPTOP-NUR8T6G0;Initial Catalog=SqlTestingSystem;Integrated Security=True");
+        private void VerileriGöster()
+        {
+            baglan.Open();
+            SqlCommand komut = new SqlCommand("Select *From TestingSystems", baglan);
+            SqlDataReader oku = komut.ExecuteReader();
+            while (oku.Read())
+            {
+                ListViewItem ekle = new ListViewItem();
+                ekle.Text = oku["DeviceID"].ToString();
+                ekle.SubItems.Add(oku["TestSonuc"].ToString());
+                listView1.Items.Add(ekle);
+            }
+            baglan.Close();
+        }
+
+        private void VerileriKaydet()
+        {
+            bool okeyTest = true;
+            baglan.Open();
+            SqlCommand komut = new SqlCommand("Insert Into TestingSystems (DeviceID,TestSonuc)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "')", baglan);
+            komut.ExecuteNonQuery();
+            baglan.Close();
+
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -37,10 +64,10 @@ namespace _2021__Testing_System
 
 
             label3.Text = "Bağlantı Kapalı";   //Bu esnada bağlantı yok.
-            label3.ForeColor= Color.Red;
+            label3.ForeColor = Color.Red;
             button2.Enabled = false;
 
-
+            bool okeyTest = false;
 
         }
 
@@ -89,7 +116,7 @@ namespace _2021__Testing_System
             }
             else
             {
-                
+
                 serialPort1.Close();
                 serialPort2.Close();
             }
@@ -133,6 +160,8 @@ namespace _2021__Testing_System
                     {
                         label4.ForeColor = Color.GreenYellow;
                         label4.Text = ("Test Başarılı!");
+                        VerileriKaydet();
+
                     }
                     else
                     {
@@ -163,8 +192,8 @@ namespace _2021__Testing_System
                 else if (!serialPort2.IsOpen)
                 {
                     label4.ForeColor = Color.Red;
-                    label4.Text= ($"{serialPort2.PortName} açılamadı");
-                   // MessageBox.Show($"{serialPort2.PortName} açılamadı");
+                    label4.Text = ($"{serialPort2.PortName} açılamadı");
+                    // MessageBox.Show($"{serialPort2.PortName} açılamadı");
                 }
 
             }
@@ -200,6 +229,11 @@ namespace _2021__Testing_System
                 comboBox1.Items.Add(port); // Port isimlerini combobox1'de gösteriyoruz.
                 comboBox1.SelectedIndex = 0;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VerileriGöster();
         }
     }
 }
