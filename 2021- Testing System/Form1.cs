@@ -23,8 +23,8 @@ namespace _2021__Testing_System
             InitializeComponent();
             serialPort1.ReadTimeout = 100;//veri okuma timeout'u 100ms
             serialPort2.ReadTimeout = 100;//veri okuma timeout'u 100ms
-           
             
+
         }
         SqlConnection baglan = new SqlConnection("Data Source=LAPTOP-NUR8T6G0;Initial Catalog=SqlTestingSystem;Integrated Security=True");
         bool okeyTest;
@@ -65,8 +65,6 @@ namespace _2021__Testing_System
             button2.Enabled = false;
             label4.Text = " ";
             
-            
-
 
         }
 
@@ -75,6 +73,7 @@ namespace _2021__Testing_System
         bool portOpen(bool state)
 
         {
+            
             if (state)
             {
 
@@ -214,10 +213,7 @@ namespace _2021__Testing_System
 
         private void comboBox3_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem != " " && comboBox2.SelectedItem != " ")
-            {
-                button2.Enabled = true;
-            }
+           
             comboBox3.Items.Clear();
 
             //Port Numaralarını ports isimli diziye atıyoruz.
@@ -230,7 +226,6 @@ namespace _2021__Testing_System
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-           
 
             comboBox1.Items.Clear();
 
@@ -250,11 +245,18 @@ namespace _2021__Testing_System
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == null)
+            /* if (textBox1.Text != " " && comboBox1.SelectedItem != " " && comboBox2.SelectedItem != " ")
+             {
+                 button2.Enabled = true;
+             }*/
+            if (comboBox1.SelectedItem != " " && comboBox2.SelectedItem != " ")
             {
-                button2.Enabled = false;
+                if (textBox1.Text != " ")
+                {
+                    button2.Enabled = true;
+                }
             }
         }
     }
