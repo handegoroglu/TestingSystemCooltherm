@@ -20,3 +20,8 @@ C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj
 C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.csproj.CoreCompileInputs.cache
 C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.exe
 C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.pdb
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\EntityFramework.dll
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\EntityFramework.xml
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.csproj.CopyComplete

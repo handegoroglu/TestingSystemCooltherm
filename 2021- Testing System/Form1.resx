@@ -126,11 +126,14 @@
   <metadata name="serialPort2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>290, 17</value>
   </metadata>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>399, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox3.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAKylJREFUeF7t3elWG1mTRuECj2W7vnF13/+ddh+cGxcGSUjKIYazn1+1DMp8I+Io
+        wgAADsIBFShKgAAAKylJREFUeF7t3elWG1mTRuECj2W7vnF13/+ddh+cGxcGSUjKIYazn1+1DMp8I+Io
         T6JC4g9J0nn/NzFaIEnSPNgDNdASSZJae2Df0wv0RpKklv7JfqcTRn8+LW2SJKmPb+xzumD06ePSLkmS
         6vvI/qYr0DNJkmpjX9MNaJ0kSTWxn+kOtFCSpHrYy3QHWihJUi3sY1qBVkqSVAd7mFaglZIk1cEephVo
         pSRJNbB/aSXaKUlSDexf2gAtlSQpP/YubYCWSpKUH3uXNkBLJUnKj71LG6ClkiTlx96lDdBSSZLyY+/S
@@ -317,10 +320,10 @@
         pDzYo7QT2ixJUk7sV9oIbZUk/PHH/wMfGlhsB1rxcgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox4.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAKylJREFUeF7t3elWG1mTRuECj2W7vnF13/+ddh+cGxcGSUjKIYazn1+1DMp8I+Io
+        wQAADsEBuJFr7QAAKylJREFUeF7t3elWG1mTRuECj2W7vnF13/+ddh+cGxcGSUjKIYazn1+1DMp8I+Io
         T6JC4g9J0nn/NzFaIEnSPNgDNdASSZJae2Df0wv0RpKklv7JfqcTRn8+LW2SJKmPb+xzumD06ePSLkmS
         6vvI/qYr0DNJkmpjX9MNaJ0kSTWxn+kOtFCSpHrYy3QHWihJUi3sY1qBVkqSVAd7mFaglZIk1cEephVo
         pSRJNbB/aSXaKUlSDexf2gAtlSQpP/YubYCWSpKUH3uXNkBLJUnKj71LG6ClkiTlx96lDdBSSZLyY+/S

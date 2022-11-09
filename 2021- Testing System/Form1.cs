@@ -23,38 +23,35 @@ namespace _2021__Testing_System
             InitializeComponent();
             serialPort1.ReadTimeout = 100;//veri okuma timeout'u 100ms
             serialPort2.ReadTimeout = 100;//veri okuma timeout'u 100ms
+           
+            
         }
         SqlConnection baglan = new SqlConnection("Data Source=LAPTOP-NUR8T6G0;Initial Catalog=SqlTestingSystem;Integrated Security=True");
-        private void VerileriGöster()
-        {
-            baglan.Open();
-            SqlCommand komut = new SqlCommand("Select *From TestingSystems", baglan);
-            SqlDataReader oku = komut.ExecuteReader();
-            while (oku.Read())
-            {
-                ListViewItem ekle = new ListViewItem();
-                ekle.Text = oku["DeviceID"].ToString();
-                ekle.SubItems.Add(oku["TestSonuc"].ToString());
-                listView1.Items.Add(ekle);
-            }
-            baglan.Close();
-        }
+        bool okeyTest;
 
         private void VerileriKaydet()
         {
-            bool okeyTest = true;
-            baglan.Open();
-            SqlCommand komut = new SqlCommand("Insert Into TestingSystems (DeviceID,TestSonuc)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "')", baglan);
-            komut.ExecuteNonQuery();
-            baglan.Close();
+             
+            if(okeyTest)
+            {
+                baglan.Open();
+                SqlCommand komut = new SqlCommand("Insert Into TestingSystems (DeviceID,TestSonuc,Tarih)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + DateTime.Now + "' )", baglan);
+                komut.ExecuteNonQuery();
+                baglan.Close();
+            }
+            else if (okeyTest==false)
+            {
+                baglan.Open();
+                SqlCommand komut = new SqlCommand("Insert Into TestingSystems (DeviceID,TestSonuc,Tarih)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + DateTime.Now + "' )", baglan);
+                komut.ExecuteNonQuery();
+                baglan.Close();
+            }
 
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
             // Baudrate'leri kendimiz combobox2'ye giriyoruz.
             comboBox2.Items.Add("9600");
             comboBox2.SelectedIndex = 0;
@@ -66,8 +63,10 @@ namespace _2021__Testing_System
             label3.Text = "Bağlantı Kapalı";   //Bu esnada bağlantı yok.
             label3.ForeColor = Color.Red;
             button2.Enabled = false;
+            label4.Text = " ";
+            
+            
 
-            bool okeyTest = false;
 
         }
 
@@ -107,6 +106,7 @@ namespace _2021__Testing_System
                 {
                     label3.ForeColor = Color.GreenYellow;
                     label3.Text = "Bağlantı Açık";
+                    
                 }
                 else
                 {
@@ -158,22 +158,29 @@ namespace _2021__Testing_System
 
                     if (receiveData.Equals(okeymessage.Replace("\n", "")) == true)
                     {
+                        okeyTest = true;
                         label4.ForeColor = Color.GreenYellow;
                         label4.Text = ("Test Başarılı!");
                         VerileriKaydet();
+                        timer1.Start();
 
                     }
                     else
                     {
+                        okeyTest=false;
                         label4.ForeColor = Color.Red;
                         label4.Text = ($"{serialPort2.PortName}'den {serialPort1.PortName}'e data gönderilemedi.");
+                        VerileriKaydet();
+                        timer1.Start();
                     }
 
                 }
                 else
-                {
+                {   okeyTest = false;
                     label4.ForeColor = Color.Red;
                     label4.Text = ($"{serialPort1.PortName}'den {serialPort2.PortName}'e data gönderilemedi.");
+                    VerileriKaydet();
+                    timer1.Start();
                 }
 
             }
@@ -183,17 +190,20 @@ namespace _2021__Testing_System
                 {
                     label4.ForeColor = Color.Red;
                     label4.Text = ($"{serialPort1.PortName} ve {serialPort2.PortName} açılamadı");
+                    timer1.Start();
                 }
                 else if (!serialPort1.IsOpen)
                 {
                     label4.ForeColor = Color.Red;
                     label4.Text = ($"{serialPort1.PortName} açılamadı");
+                    timer1.Start();
                 }
                 else if (!serialPort2.IsOpen)
                 {
                     label4.ForeColor = Color.Red;
                     label4.Text = ($"{serialPort2.PortName} açılamadı");
-                    // MessageBox.Show($"{serialPort2.PortName} açılamadı");
+                    timer1.Start();
+                    
                 }
 
             }
@@ -220,6 +230,7 @@ namespace _2021__Testing_System
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
+           
 
             comboBox1.Items.Clear();
 
@@ -231,9 +242,20 @@ namespace _2021__Testing_System
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            VerileriGöster();
+            //Hatalı  mesajını belli süre sonra kaldırma
+            label4.Text = "";
+            timer1.Stop();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == null)
+            {
+                button2.Enabled = false;
+            }
         }
     }
 }
