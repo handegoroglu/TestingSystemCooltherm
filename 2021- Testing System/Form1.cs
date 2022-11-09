@@ -26,7 +26,7 @@ namespace _2021__Testing_System
             
 
         }
-        SqlConnection baglan = new SqlConnection("Data Source=LAPTOP-NUR8T6G0;Initial Catalog=SqlTestingSystem;Integrated Security=True");
+       
         bool okeyTest;
 
         private void VerileriKaydet()
@@ -34,17 +34,16 @@ namespace _2021__Testing_System
              
             if(okeyTest)
             {
-                baglan.Open();
-                SqlCommand komut = new SqlCommand("Insert Into TestingSystems (DeviceID,TestSonuc,Tarih)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + DateTime.Now + "' )", baglan);
+                //Program.sqlConnection.Open();
+                SqlCommand komut = new SqlCommand("Insert Into TestResults (DeviceID,TestSonuc,Time)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + DateTime.Now + "' )", Program.sqlConnection);
                 komut.ExecuteNonQuery();
-                baglan.Close();
             }
             else if (okeyTest==false)
             {
-                baglan.Open();
-                SqlCommand komut = new SqlCommand("Insert Into TestingSystems (DeviceID,TestSonuc,Tarih)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + DateTime.Now + "' )", baglan);
+                //Program.sqlConnection.Open();
+                SqlCommand komut = new SqlCommand("Insert Into TestResults (DeviceID,TestSonuc,Time)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + DateTime.Now + "' )", Program.sqlConnection);
                 komut.ExecuteNonQuery();
-                baglan.Close();
+
             }
 
         }
@@ -247,10 +246,7 @@ namespace _2021__Testing_System
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            /* if (textBox1.Text != " " && comboBox1.SelectedItem != " " && comboBox2.SelectedItem != " ")
-             {
-                 button2.Enabled = true;
-             }*/
+            
             if (comboBox1.SelectedItem != null && comboBox2.SelectedItem != null)
             {
                 if (textBox1.Text != " ")
@@ -258,6 +254,15 @@ namespace _2021__Testing_System
                     button2.Enabled = true;
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            ServerAyarlari ServerAyarlari = new ServerAyarlari();
+            ServerAyarlari.ShowDialog();
+
+            
         }
     }
 }

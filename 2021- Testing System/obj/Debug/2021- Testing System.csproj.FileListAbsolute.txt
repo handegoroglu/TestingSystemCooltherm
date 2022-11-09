@@ -25,3 +25,4 @@ C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin
 C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\EntityFramework.xml
 C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\bin\Debug\EntityFramework.SqlServer.xml
 C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\2021- Testing System.csproj.CopyComplete
+C:\Projects\2021- Testing System\TestingSystemCooltherm\2021- Testing System\obj\Debug\_2021__Testing_System.ServerAyarlari.resources
