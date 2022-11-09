@@ -251,7 +251,7 @@ namespace _2021__Testing_System
              {
                  button2.Enabled = true;
              }*/
-            if (comboBox1.SelectedItem != " " && comboBox2.SelectedItem != " ")
+            if (comboBox1.SelectedItem != null && comboBox2.SelectedItem != null)
             {
                 if (textBox1.Text != " ")
                 {
