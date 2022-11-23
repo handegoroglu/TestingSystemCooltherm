@@ -35,8 +35,8 @@ namespace _2021__Testing_System
             {
                 
                 Program.sqlConnection.Close();
-
-                Program.sqlConnection = new SqlConnection("Server=" + txtServerName.Text + "; Database=" + txtDatabaseName.Text + "; Trusted_Connection=" + (checkBox1.Checked == true ? "no" : "yes") + "; UID=" + txtUserName.Text + ";PWD=" + txtPassword.Text + ";");
+                string connectionString = "Server=" + txtServerName.Text + "; Database=" + txtDatabaseName.Text + "; Trusted_Connection=" + (checkBox1.Checked == true ? "no" : "yes") + "; UID=" + txtUserName.Text + ";PWD=" + txtPassword.Text + ";";
+                Program.sqlConnection = new SqlConnection(connectionString);
                 //Program.sqlConnection = new SqlConnection("Data Source=" + txtServerName.Text + ";Initial Catalog=" + txtDatabaseName.Text + "User ID = " + txtUserName.Text + "Password =" + txtPassword.Text + ";");
                 Program.sqlConnection.Open();
                 label3.Text = "Bağlandı!";

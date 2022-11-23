@@ -30,18 +30,21 @@ namespace _2021__Testing_System
         bool okeyTest;
 
         private void VerileriKaydet()
-        {
+        {//2022-11-11 09:42:46.000
+
+            string dateTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
              
             if(okeyTest)
-            {
+            {//server a bağlanıp dener misin böyle
                 //Program.sqlConnection.Open();
-                SqlCommand komut = new SqlCommand("Insert Into TestResults (DeviceID,TestSonuc,Time)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + DateTime.Now + "' )", Program.sqlConnection);
+                string command = "Insert Into TestResults (DeviceID,TestSonuc,Time)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + dateTime + "' )";
+                SqlCommand komut = new SqlCommand(command, Program.sqlConnection);
                 komut.ExecuteNonQuery();
             }
             else if (okeyTest==false)
             {
                 //Program.sqlConnection.Open();
-                SqlCommand komut = new SqlCommand("Insert Into TestResults (DeviceID,TestSonuc,Time)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + DateTime.Now + "' )", Program.sqlConnection);
+                SqlCommand komut = new SqlCommand("Insert Into TestResults (DeviceID,TestSonuc,Time)" + " values ('" + textBox1.Text + "','" + okeyTest.ToString() + "','" + dateTime + "' )", Program.sqlConnection);
                 komut.ExecuteNonQuery();
 
             }
